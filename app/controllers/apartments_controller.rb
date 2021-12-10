@@ -13,10 +13,12 @@ class ApartmentsController < ApplicationController
   # GET /apartments/new
   def new
     @apartment = Apartment.new
+    set_buildings 
   end
 
   # GET /apartments/1/edit
   def edit
+    set_buildings
   end
 
   # POST /apartments or /apartments.json
@@ -60,6 +62,13 @@ class ApartmentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_apartment
       @apartment = Apartment.find(params[:id])
+    rescue
+      flash[:set_building_error] = "Could not find the record #{params[:id]}"
+      redirect_to building_path
+    end
+
+    def set_buildings
+      @buildings = Building.all
     end
 
     # Only allow a list of trusted parameters through.

@@ -16,10 +16,14 @@
     <%= form.number_field :number %>
   </div>
 
-  <div class="field">
-    <%= form.label :building_id %>
-    <%= form.text_field :building_id %>
-  </div>
+ <div class="field">
+                <%= form.label  :building_id, class: 'form-label' %>
+                <%= form.select :building_id, 
+                options_from_collection_for_select(@buildings, :id, :name, apartment.building_id),
+                { include_blank: "Select a building" }, 
+                {class: 'form-control'} %>
+                
+</div>
 
   <div class="actions">
     <%= form.submit %>
