@@ -16,7 +16,22 @@
 </p>
 
 <p><strong> Apartments: </strong>
-  <p>#llamar tabla de apartments</p>
+  <p>#llamar tabla de apartments x building</p>
+  
+<table class="table table-hover">
+      <tr>
+        <th> ID </th>
+        <th> Number </th>
+      </tr>
+      <% @apartments.each do |a| %>
+        <tr>
+          <td> <%= a.id %> </td>
+          <td> <%= a.number %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
 </p>
 
 <%= link_to 'Edit', edit_building_path(@building) %> |

@@ -8,6 +8,8 @@ class BuildingsController < ApplicationController
 
   # GET /buildings/1 or /buildings/1.json
   def show
+    # @buildings = Building.includes(:apartments).shuffle
+    @apartments = Apartment.all
   end
 
   # GET /buildings/new
