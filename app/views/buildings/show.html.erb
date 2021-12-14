@@ -16,14 +16,13 @@
 </p>
 
 <p><strong> Apartments: </strong>
-  <p>#llamar tabla de apartments x building</p>
   
 <table class="table table-hover">
       <tr>
         <th> ID </th>
         <th> Number </th>
       </tr>
-      <% @apartments.each do |a| %>
+      <% @building.apartments.each do |a| %>
         <tr>
           <td> <%= a.id %> </td>
           <td> <%= a.number %>

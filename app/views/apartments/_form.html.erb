@@ -22,7 +22,11 @@
                 options_from_collection_for_select(@buildings, :id, :name, apartment.building_id),
                 { include_blank: "Select a building" }, 
                 {class: 'form-control'} %>
-                
+                <% if apartment.errors[:building_id].any? %>
+                    <div>
+                      <%= apartment.errors[:building_id].first %>
+                    </div>
+                <% end %>
 </div>
 
   <div class="actions">
