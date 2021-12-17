@@ -3,13 +3,12 @@ class BuildingsController < ApplicationController
 
   # GET /buildings or /buildings.json
   def index
-    @buildings = Building.all
+    @buildings = Building.includes(:apartments)
   end
 
   # GET /buildings/1 or /buildings/1.json
   def show
-    # @buildings = Building.includes(:apartments).shuffle
-    @apartments = Apartment.all
+    @apartments = Apartment.includes(:building)
   end
 
   # GET /buildings/new

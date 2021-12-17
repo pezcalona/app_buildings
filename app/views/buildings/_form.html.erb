@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, {class: 'form-control'} %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.label :address %><br>
+    <%= form.text_field :address, {class: 'form-control'} %>
   </div>
 
   <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+    <%= form.label :city %><br>
+    <%= form.text_field :city, {class: 'form-control'} %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, {class:'btn btn-primary'} %>
   </div>
 <% end %>

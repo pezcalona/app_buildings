@@ -1,0 +1,27 @@
+$primary: #E35D6A;
+$secondary: #C8E3D4;
+$white: #fafafa;
+
+@import '~bootstrap/scss/bootstrap';
+
+.btn{
+   color: #fafafa;
+   background-color: $primary;
+}
+
+.btn-primary{
+   color: $white;
+   }
+
+a.btn-primary:visited{
+   color: $white !important;
+}
+
+a:hover {
+   background-color: $white;
+   ;
+}
+
+.icono {
+   font-size: 2rem;
+}

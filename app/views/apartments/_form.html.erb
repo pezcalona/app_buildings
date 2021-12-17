@@ -2,7 +2,6 @@
   <% if apartment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
-
       <ul>
         <% apartment.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,24 +11,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :number %>
-    <%= form.number_field :number %>
+    <%= form.label :number, class: 'form-label' %>
+    <%= form.text_field :number, {class: 'form-control'}  %>
   </div>
 
   <div class="field">
-                <%= form.label  :building_id, class: 'form-label' %>
-                <%= form.select :building_id, 
-                options_from_collection_for_select(@buildings, :id, :name, apartment.building_id),
-                { include_blank: "Select a building" }, 
-                {class: 'form-control'} %>
-                <% if apartment.errors[:building_id].any? %>
-                    <div>
-                      <%= apartment.errors[:building_id].first %>
-                    </div>
-                <% end %>
-</div>
+    <%= form.label  :building_id, class: 'form-label' %>
+    <%= form.select :building_id, options_from_collection_for_select(@buildings, :id, :name, apartment.building_id), { include_blank: "Select a building" }, {class: 'form-control'} %>
+      <% if apartment.errors[:building_id].any? %>
+        <div>
+          <%= apartment.errors[:building_id].first %>
+        </div>
+    <% end %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, {class:'btn btn-primary'} %>
   </div>
 <% end %>

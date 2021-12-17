@@ -3,7 +3,7 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments or /apartments.json
   def index
-    @apartments = Apartment.all
+    @apartments = Apartment.includes(:building)
   end
 
   # GET /apartments/1 or /apartments/1.json

@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 <% if flash[:building_destroy_error] %>
   <p><%= flash[:building_destroy_error] %> </p>
-  <% end %>
+<% end %>
 
-<h1>Buildings</h1>
 
-<table class="table table-striped col-lg-8 mx-auto text-center">
+<div class="inline text-center pb-4">
+<i class="bi bi-building icono"></i><h1>Buildings</h1>
+</div>
+
+<table class="table col-lg-8 mx-auto text-center">
 <thead>
       <tr>
       <th>Id</th>
@@ -16,7 +19,7 @@
     </tr>
 </thead>
 
- <tbody>
+<tbody>
     <% @buildings.each do |building| %>
       <tr>
         <td><%= building.id %></td>
