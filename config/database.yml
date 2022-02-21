@@ -7,6 +7,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+
+  host: <%= Rails.application.credentials.db[:host] %>
+  port: <%= Rails.application.credentials.db[:port] %>
+
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
